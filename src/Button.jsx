@@ -1,12 +1,16 @@
+import styles from "./Button.module.css"
 function Button(props) {
-    const{ type } = props
-
-    const handleClick = () =>{
-        alert('クリックされました');
-    }
+    const { type, disabled, children, onClick } = props;
 
     return (
-    <button type="button"onClick={handleClick}>クリック</button>
+        <button
+            type={type}
+            disabled={disabled}
+            className={styles.button}
+            onClick={disabled ? undefined : onClick}
+        >
+            {children}
+        </button>
     )
 }
 
