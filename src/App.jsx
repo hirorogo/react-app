@@ -1,16 +1,18 @@
 import './App.css'
-import Button from './Button';
+import Button from './components/Button/Button';
+import { useState } from "react"
 
 function App() {
+
+  const [count, setCount] = useState(0);
   const handleClick = () => {
-    console.log("buttoon clicked")
+    setCount(count + 1);
   }
+
   return (
     <>
       <h1>Hello World</h1>
-      <Button type="button" disabled={true} onClick={handleClick}>
-        <span>ボタン</span>
-      </Button>
+      <Button type="button" disabled={false} onClick={handleClick}/>
     </>
   )
 }
