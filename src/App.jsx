@@ -1,7 +1,7 @@
 import './App.css'
 import Button from './components/Button/Button';
 import Display from './components/Display/Display';
-import { useState } from "react"
+import { useState ,useEffect} from "react"
 
 function App() {
   const [count, setCount] = useState(0);
@@ -9,6 +9,9 @@ function App() {
     setCount(count + 1);
   }
 
+  useEffect(() => {
+    console.log(`Count:`,count)
+  }, [count]);
   return (
     <>
       <h1>Hello World</h1>
