@@ -1,9 +1,9 @@
 import './App.css'
 import Button from './components/Button/Button';
+import Display from './components/Display/Display';
 import { useState } from "react"
 
 function App() {
-
   const [count, setCount] = useState(0);
   const handleClick = () => {
     setCount(count + 1);
@@ -12,7 +12,10 @@ function App() {
   return (
     <>
       <h1>Hello World</h1>
-      <Button type="button" disabled={false} onClick={handleClick}/>
+      <Button type="button" disabled={false} onClick={handleClick}>
+        ボタン
+      </Button>
+      <Display count={count} />
     </>
   )
 }
