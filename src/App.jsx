@@ -11,6 +11,9 @@ function App() {
 
   useEffect(() => {
     console.log(`Count:`,count)
+    if (count>10){
+      setCountcount = 0;
+    }
   }, [count]);
   return (
     <>
