@@ -1,29 +1,15 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Button from './components/Button/Button';
-import Display from './components/Display/Display';
-import { useState ,useEffect} from "react"
-
+import Home from './pages/Home'
+import SamplePage from './pages/SamplePages'
 function App() {
-  const [count, setCount] = useState(0);
-  const handleClick = () => {
-    setCount(count + 1);
-  }
-
-  useEffect(() => {
-    console.log(`Count:`,count)
-    if (count>10){
-      setCountcount (0);
-    }
-  }, [count]);
   return (
-    <>
-      <h1>Hello World</h1>
-      <Button type="button" disabled={false} onClick={handleClick}>
-        ボタン
-      </Button>
-      <Display count={count} />
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/sample-page' element={<SamplePage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
 export default App
